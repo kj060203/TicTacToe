@@ -1,8 +1,8 @@
 ﻿using TicTacToe;
 
 // Initialize Variables 
-string[] gameBoard = new string[9]; // Use a 1D array for the board
-bool player = true; // True = Player 1, False = Player 2
+string[] gameBoard = new string[9];
+bool player = true; 
 string player1 = "X";
 string player2 = "O";
 int row = 0;
@@ -15,7 +15,7 @@ Console.WriteLine("Welcome to Tic Tac Toe!");
 
 do
 {
-    // Selects a player and gets input
+    // Selects a player and gets their input
     if (player)
     {
         isValid = false;
@@ -27,7 +27,7 @@ do
             Console.WriteLine("Enter which column you would like to select (1-3): ");
             column = Convert.ToInt32(Console.ReadLine());
 
-            // Convert 2D input to 1D index
+            // Uses index to place guess correctly on the board
             int index = (row - 1) * 3 + (column - 1);
 
             // Validate if the space is already taken
@@ -38,7 +38,8 @@ do
             else
             {
                 gameBoard[index] = player1;
-                if (Methods.checkWinner(gameBoard) != "0")
+                //Checking to see if the game is over. If over it will print who won or if it is a tie. Else it will continue
+                if (mt.checkWinner(gameBoard) != "0")
                 {
                     Console.WriteLine($"Player {Methods.checkWinner(gameBoard)} Wins!!!");
                     gameOver = true;
@@ -49,7 +50,7 @@ do
                     gameOver = true;
                 }
 
-                Methods.printBoard(gameBoard);
+                mt.printBoard(gameBoard);
                 isValid = true;
                 player = !player;
             }
@@ -66,7 +67,7 @@ do
             Console.WriteLine("Enter which column you would like to select (1-3): ");
             column = Convert.ToInt32(Console.ReadLine());
 
-            // Convert 2D input to 1D index
+            
             int index = (row - 1) * 3 + (column - 1);
 
             // Validate if the space is already taken
@@ -77,7 +78,7 @@ do
             else
             {
                 gameBoard[index] = player2;
-                if (Methods.checkWinner(gameBoard) != "0")
+                if (mt.checkWinner(gameBoard) != "0")
                 {
                     Console.WriteLine($"Player {Methods.checkWinner(gameBoard)} Wins!!!");
                     gameOver = true;
@@ -88,7 +89,7 @@ do
                     gameOver = true;
                 }
 
-                Methods.printBoard(gameBoard);
+                mt.printBoard(gameBoard);
                 isValid = true;
                 player = !player;
             }
