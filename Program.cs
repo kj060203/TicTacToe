@@ -11,10 +11,10 @@ using TicTacToe;
 
 Methods mt = new Methods();
 // Initialize Variables 
-string[,] gameBoard = new string[3, 3];
+char[,] gameBoard = new char[3, 3];
 bool player = true;
-string player1 = 'X';
-string player2 = 'O';
+char player1 = 'X';
+char player2 = 'O';
 int row = 0;
 int column = 0;
 bool isValid = false;
