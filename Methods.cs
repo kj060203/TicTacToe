@@ -16,7 +16,7 @@ namespace TicTacToe
     internal class Methods
     {
         // Contain a method that prints the board based on the information passed to it
-        public static void printBoard(char[] board)
+        public static void printBoard(string[] board)
         {
             Console.WriteLine("\n");
             Console.WriteLine($" {board[0]} | {board[1]} | {board[2]} ");
