@@ -27,6 +27,27 @@ namespace TicTacToe
         Console.WriteLine($" {board[6]} | {board[7]} | {board[8]} ");
         Console.WriteLine("\n");
     }
-        
+        public static string CheckWinner(char[] board)
+    {
+        // Winning combinations
+        int[,] winningPositions = {
+            { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 }, 
+            { 0, 3, 6 }, { 1, 4, 7 }, { 2, 5, 8 }, 
+            { 0, 4, 8 }, { 2, 4, 6 }              
+        };
+
+        for (int i = 0; i < winningPositions.GetLength(0); i++)
+        {
+            int a = winningPositions[i, 0];
+            int b = winningPositions[i, 1];
+            int c = winningPositions[i, 2];
+
+            if (board[a] == board[b] && board[b] == board[c])
+            {
+                return board[a] == 'X' ? "1" : "2";
+            }
+        }
+
+        return null; // No winner yet
     }
 }
