@@ -48,6 +48,6 @@ namespace TicTacToe
             }
         }
 
-        return null; // No winner yet
+        return "0"; // No winner yet
     }
 }
