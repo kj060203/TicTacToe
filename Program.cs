@@ -1,4 +1,5 @@
-﻿using TicTacToe;
+Methods mt = new Methods();
+using TicTacToe;
 
 // Initialize Variables 
 string[] gameBoard = new string[9]; // Use a 1D array for the board
