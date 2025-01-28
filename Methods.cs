@@ -15,6 +15,18 @@ using System.Xml.Linq;
 namespace TicTacToe
 {
     internal class Methods
+        // Contain a method that prints the board based on the information passed to it
     {
+        public static void PrintBoard(char[] board)
+    {
+        Console.WriteLine("\n");
+        Console.WriteLine($" {board[0]} | {board[1]} | {board[2]} ");
+        Console.WriteLine("---|---|---");
+        Console.WriteLine($" {board[3]} | {board[4]} | {board[5]} ");
+        Console.WriteLine("---|---|---");
+        Console.WriteLine($" {board[6]} | {board[7]} | {board[8]} ");
+        Console.WriteLine("\n");
+    }
+        
     }
 }
